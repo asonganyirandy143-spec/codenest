@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Randyblaze coding</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<nav>
+<h1>Codenest</h1>
+<ul>
+<li><a href="#courses">Courses</a></li>
+<li><a href="#html-notes">HTML</a></li>
+<li><a href="#css-notes">CSS</a></li>
+<li><a href="#js-notes">JS</a></li>
+<li><a href="#php-notes">PHP</a></li>
+<li><a href="#python-notes">Python</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+<header>
+<h2>Learn Coding Interactively!</h2>
+<p>Read the notes, then practice in the playgrounds below.</p>
+<a href="#courses" class="btn">Start Learning</a>
+</header>
+
+<section id="courses">
+<h2>Courses</h2>
+<div class="progress-bar-container">
+<div class="progress-bar" id="progress-bar">0%</div>
+</div>
+<div class="course-list">
+<div class="course">
+<h3 onclick="toggleCourse(this)">HTML Basics ▼</h3>
+<div class="course-content">
+<p>Learn web page structure using HTML.</p>
+<button onclick="markComplete(this)">Mark Complete ✅</button>
+</div>
+</div>
+<div class="course">
+<h3 onclick="toggleCourse(this)">CSS Styling ▼</h3>
+<div class="course-content">
+<p>Style your pages using CSS.</p>
+<button onclick="markComplete(this)">Mark Complete ✅</button>
+</div>
+</div>
+<div class="course">
+<h3 onclick="toggleCourse(this)">JavaScript Basics ▼</h3>
+<div class="course-content">
+<p>Add interactivity with JS.</p>
+<button onclick="markComplete(this)">Mark Complete ✅</button>
+</div>
+</div>
+</div>
+</section>
+
+<section id="html-notes">
+<h2>HTML Notes</h2>
+<div class="note">
+<h3 onclick="toggleNote(this)">What is HTML? ▼</h3>
+<div class="note-content">
+<p>HTML (HyperText Markup Language) structures web pages.</p>
+<pre>
+<h1>Hello World</h1>
+<p>This is a paragraph.</p>
+</pre>
+</div>
+</div>
+<div class="note">
+<h3 onclick="toggleNote(this)">Common Tags ▼</h3>
+<div class="note-content">
+<p>Headings: &lt;h1&gt; to &lt;h6&gt;</p>
+<p>Paragraph: &lt;p&gt;</p>
+<p>Links: &lt;a href="#"&gt;Link&lt;/a&gt;</p>
+</div>
+</div>
+</section>
+
+<section id="css-notes">
+<h2>CSS Notes</h2>
+<div class="note">
+<h3 onclick="toggleNote(this)">What is CSS? ▼</h3>
+<div class="note-content">
+<p>CSS styles HTML content.</p>
+<pre>
+body {
+  background-color: lightblue;
+  color: #333;
+}
+h1 {
+  color: red;
+}
+</pre>
+</div>
+</div>
+</section>
+
+<section id="js-notes">
+<h2>JavaScript Notes</h2>
+<div class="note">
+<h3 onclick="toggleNote(this)">What is JS? ▼</h3>
+<div class="note-content">
+<p>JavaScript adds interactivity to web pages.</p>
+<pre>
+alert("Hello World!");
+console.log("Logged to console");
+</pre>
+</div>
+</div>
+</section>
+
+<section id="php-notes">
+<h2>PHP Notes</h2>
+<div class="note">
+<h3 onclick="toggleNote(this)">What is PHP? ▼</h3>
+<div class="note-content">
+<p>PHP runs on the server to generate dynamic web content.</p>
+<pre>
+<?php
+echo "Hello PHP!";
+?>
+</pre>
+</div>
+</div>
+</section>
+
+<section id="python-notes">
+<h2>Python Notes</h2>
+<div class="note">
+<h3 onclick="toggleNote(this)">What is Python? ▼</h3>
+<div class="note-content">
+<p>Python is a versatile programming language for many purposes.</p>
+<pre>
+print("Hello Python")
+for i in range(5):
+    print(i)
+</pre>
+</div>
+</div>
+</section>
+
+<section id="playground">
+<h2>Web Playground</h2>
+<textarea id="html-code" placeholder="HTML"></textarea>
+<textarea id="css-code" placeholder="CSS"></textarea>
+<textarea id="js-code" placeholder="JS"></textarea>
+<div class="playground-buttons">
+<button onclick="runPlayground()">Run ▶️</button>
+<button onclick="clearPlayground()">Clear 🗑️</button>
+</div>
+<iframe id="live-output" sandbox="allow-scripts allow-same-origin"></iframe>
+</section>
+
+<section id="php-playground">
+<h2>PHP Playground</h2>
+<textarea id="php-code" placeholder="echo 'Hello PHP';"></textarea>
+<button onclick="runPHPCode()">Run PHP ▶️</button>
+<pre id="php-output"></pre>
+</section>
+
+<section id="python-playground">
+<h2>Python Playground</h2>
+<textarea id="python-code" placeholder="print('Hello Python')"></textarea>
+<button onclick="runPython()">Run Python ▶️</button>
+<pre id="python-output"></pre>
+</section>
+
+<section id="contact">
+<h2>Contact Me</h2>
+<form id="contact-form" method="POST" action="assets/php/contact.php">
+<label for="name">Name:</label>
+<input type="text" id="name" name="name" required>
+
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" required>
+
+<label for="message">Message:</label>
+<textarea id="message" name="message" rows="5" required></textarea>
+
+<button type="submit">Send Message 📩</button>
+</form>
+<div id="contact-response"></div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+<script src="assets/js/script.js"></script>
+</body>
+</html>

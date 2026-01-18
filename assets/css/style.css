@@ -1,0 +1,221 @@
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:#f5f5f8;color:#333;line-height:1.6;transition:all 0.3s}
+a{text-decoration:none}
+button{cursor:pointer;font-family:inherit;transition:0.3s}
+
+/* ---------------- Navigation ---------------- */
+nav{
+  background: linear-gradient(90deg,#1e1e2f,#3b3b5f);
+  color:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:1rem 2rem;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 2px 8px rgba(0,0,0,0.2);
+}
+nav h1{font-size:1.6rem;font-weight:bold}
+nav ul{display:flex;list-style:none}
+nav ul li{margin-left:1.5rem}
+nav ul li a{color:#fff;font-weight:bold;position:relative}
+nav ul li a::after{
+  content:"";
+  position:absolute;
+  width:0;
+  height:2px;
+  background:#ff6600;
+  left:0;
+  bottom:-4px;
+  transition:0.3s;
+}
+nav ul li a:hover::after{width:100%}
+
+/* ---------------- Header ---------------- */
+header{
+  text-align:center;
+  padding:4rem 2rem;
+  background:linear-gradient(to right,#1e1e2f,#3b3b5f);
+  color:#fff;
+}
+header h2{font-size:2.8rem;margin-bottom:1rem;letter-spacing:1px}
+header p{font-size:1.2rem;margin-bottom:2rem;opacity:0.9}
+header .btn{
+  text-decoration:none;
+  padding:0.8rem 2rem;
+  background:linear-gradient(90deg,#ff6600,#ff9f00);
+  color:#fff;
+  border-radius:5px;
+  font-weight:bold;
+  transition:0.3s;
+}
+header .btn:hover{background:linear-gradient(90deg,#ff9f00,#ff6600);transform:scale(1.05)}
+
+/* ---------------- Sections ---------------- */
+section{padding:3rem 2rem}
+section h2{text-align:center;margin-bottom:2rem;color:#1e1e2f;letter-spacing:0.5px;position:relative}
+section h2::after{
+  content:"";
+  display:block;
+  width:60px;
+  height:3px;
+  background:#ff6600;
+  margin:0.5rem auto 0 auto;
+  border-radius:2px;
+}
+
+/* ---------------- Courses ---------------- */
+.course-list{display:flex;flex-wrap:wrap;justify-content:center;gap:1.2rem}
+.course{
+  background:#fff;
+  border-radius:12px;
+  width:320px;
+  box-shadow:0 6px 15px rgba(0,0,0,0.1);
+  transition:0.3s;
+  cursor:pointer;
+  transform:translateY(0);
+}
+.course:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,0.2)}
+.course h3{
+  padding:1rem;
+  background:linear-gradient(90deg,#1e1e2f,#3b3b5f);
+  color:#fff;
+  border-radius:12px 12px 0 0;
+}
+.course-content{display:none;padding:1rem}
+.course-content button{
+  margin-top:1rem;
+  padding:0.6rem 1.2rem;
+  background:linear-gradient(90deg,#1e1e2f,#33335f);
+  color:#fff;
+  border:none;
+  border-radius:5px;
+  transition:0.3s;
+}
+.course-content button:hover{background:linear-gradient(90deg,#33335f,#1e1e2f);transform:scale(1.05)}
+
+/* ---------------- Progress Bar ---------------- */
+.progress-bar-container{
+  width:80%;
+  margin:1rem auto;
+  background:#ddd;
+  border-radius:20px;
+  overflow:hidden;
+}
+.progress-bar{
+  width:0%;
+  text-align:center;
+  padding:0.4rem 0;
+  background:linear-gradient(90deg,#ff6600,#ff9f00);
+  color:#fff;
+  border-radius:20px;
+  font-weight:bold;
+  transition:0.5s;
+}
+
+/* ---------------- Notes ---------------- */
+.note{margin-bottom:1rem;background:#fff;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.1);transition:0.3s}
+.note:hover{transform:translateY(-2px)}
+.note h3{
+  padding:0.8rem 1rem;
+  background:linear-gradient(90deg,#33335f,#1e1e2f);
+  color:#fff;
+  border-radius:10px 10px 0 0;
+  cursor:pointer;
+  transition:0.3s;
+}
+.note h3:hover{background:linear-gradient(90deg,#1e1e2f,#33335f)}
+.note-content{
+  padding:1rem;
+  display:none;
+  font-size:0.95rem;
+  background:#f9f9fb;
+  border-top:1px solid #ddd;
+}
+.note-content pre{
+  background:#eef0f5;
+  padding:0.6rem;
+  border-radius:5px;
+  overflow-x:auto;
+}
+
+/* ---------------- Playgrounds ---------------- */
+textarea{
+  width:100%;
+  padding:0.6rem;
+  margin-bottom:0.5rem;
+  font-family:monospace;
+  border-radius:5px;
+  border:1px solid #ccc;
+  font-size:0.95rem;
+  resize: vertical;
+  transition:0.3s;
+}
+textarea:focus{border-color:#ff6600;box-shadow:0 0 6px rgba(255,102,0,0.3);outline:none}
+.playground-buttons{display:flex;gap:1rem;margin-bottom:0.5rem}
+button{
+  padding:0.6rem 1.5rem;
+  background:linear-gradient(90deg,#1e1e2f,#33335f);
+  color:#fff;
+  border:none;
+  border-radius:5px;
+  transition:0.3s;
+}
+button:hover{background:linear-gradient(90deg,#33335f,#1e1e2f);transform:scale(1.05)}
+iframe, pre{width:100%;border:1px solid #ccc;margin-top:0.5rem;border-radius:8px}
+#live-output{height:300px}
+#php-output,#python-output{height:150px;overflow:auto;background:#f9f9fb;padding:0.5rem}
+
+/* ---------------- Contact ---------------- */
+#contact{
+  padding:3rem 2rem;
+  background:#f0f0f5;
+  border-top:3px solid #1e1e2f;
+}
+#contact h2{text-align:center;margin-bottom:2rem;color:#1e1e2f;font-size:2rem;position:relative}
+#contact-form{
+  max-width:600px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+}
+#contact-form label{font-weight:bold;margin-bottom:0.3rem}
+#contact-form input,#contact-form textarea{
+  padding:0.7rem;border:1px solid #ccc;border-radius:5px;font-family:inherit;font-size:1rem;width:100%;resize:vertical;
+  transition:border 0.3s, box-shadow 0.3s;
+}
+#contact-form input:focus,#contact-form textarea:focus{
+  border-color:#ff6600;
+  box-shadow:0 0 8px rgba(255,102,0,0.5);
+  outline:none;
+}
+#contact-form button{
+  padding:0.8rem;background:linear-gradient(90deg,#1e1e2f,#33335f);color:#fff;border:none;border-radius:5px;font-size:1.1rem;transition:0.3s;
+}
+#contact-form button:hover{background:linear-gradient(90deg,#33335f,#1e1e2f);transform:scale(1.05)}
+#contact-response{
+  text-align:center;
+  margin-top:1rem;
+  font-weight:bold;
+  color:#fff;
+  min-height:1.5rem;
+  padding:0.5rem;
+  border-radius:5px;
+  opacity:0;
+  transition:opacity 0.5s, background 0.5s;
+}
+
+/* Success and error states for JS */
+#contact-response.success{background:#28a745;opacity:1;}
+#contact-response.error{background:#dc3545;opacity:1;}
+
+/* ---------------- Footer/Responsive ---------------- */
+footer{background:#1e1e2f;color:#fff;text-align:center;padding:1rem;margin-top:2rem}
+@media(max-width:768px){
+    nav ul{flex-direction:column;align-items:flex-start}
+    .course-list{flex-direction:column;align-items:center}
+    #live-output{height:200px}
+    #contact{padding:2rem 1rem}
+}
